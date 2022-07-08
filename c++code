@@ -1,0 +1,29 @@
+class Solution{
+public:	
+
+vector<string>an;
+void fun(int n,int on,int ze,string t)
+{
+    if(n==0)
+    {
+        if(on>=ze)
+        an.push_back(t);
+        return;
+    }
+    fun(n-1,on+1,ze,t+"1");
+    
+    if(ze<on)
+    fun(n-1,on,ze+1,t+"0");
+    
+}
+
+	vector<string> NBitBinary(int N)
+	{
+	    string t="1";
+	    fun(N-1,1,0,t);
+	    return an;
+	}
+};
+
+
+https://practice.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1/?page=2&category[]=Recursion&sortBy=submissions#
